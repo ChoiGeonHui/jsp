@@ -31,7 +31,7 @@
 
 <div class="dflex">
 <a class="btn btn-info" href="/lesson02/d1q2_1.jsp?type=time">현재 시간 확인</a>
-<a class="btn btn-danger" href="/lesson02/d1q2_1.jsp?type=date">현재 날짜 확인</a>
+<a class="btn btn-success" href="/lesson02/d1q2_1.jsp?type=date">현재 날짜 확인</a>
 </div>
 
 

@@ -1,12 +1,10 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz02</title>
+<title>체격 조건</title>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -24,27 +22,25 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
-
-
 </head>
 <body>
 
-<%
-Date date = new Date();
-SimpleDateFormat sdf = new SimpleDateFormat("현재 시간은 HH시 mm분 ss초입니다");
-SimpleDateFormat sdf2 = new SimpleDateFormat("현재 날짜는 yyyy년 MM월 dd일 입니다");
+<form method="get" action="/lesson02/d2q1_1.jsp">
+	<div class="container">
 
-String a =request.getParameter("type") ;
-
-
-%>
-<div class="container">
-<h1>
-<%= 
-request.getParameter("type").equals("time") ? sdf.format(date):sdf2.format(date) %>
-</h1>
-</div>
+			<h1>체격 조건 입력</h1>
+			<div class="d-flex">
+				<input type="text" class="form-control col-3 mr-1" id="CM" name="CM"
+					placeholder="키를 입력하세요"> <span class="mr-2 mt-3">CM</span> <input
+					type="text" class="form-control col-3 mr-1" id="KG" name="KG"
+					placeholder="몸무게를 입력하세요"> <span class="mr-2 mt-3">KG</span>
+				<button type="submit" class="btn btn-info">계산</button>
+			</div>
 
 
+
+		</div>
+
+</form>
 </body>
 </html>

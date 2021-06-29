@@ -1,13 +1,11 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz02</title>
-
+<title>계산기</title>
+</head>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -25,26 +23,45 @@
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
 
-
-</head>
 <body>
 
 <%
-Date date = new Date();
-SimpleDateFormat sdf = new SimpleDateFormat("현재 시간은 HH시 mm분 ss초입니다");
-SimpleDateFormat sdf2 = new SimpleDateFormat("현재 날짜는 yyyy년 MM월 dd일 입니다");
+String a = request.getParameter("num1");
+String b = request.getParameter("num2");
+String c =request.getParameter("computer");
+int num1 = Integer.parseInt(a);
+int num2 = Integer.parseInt(b);
 
-String a =request.getParameter("type") ;
+double total= 0;
 
+/* if(c.equals("+")){ total =(double) num1+num2; }
+else if(c.equals("-")){total = (double) num1-num2;}
+else if(c.equals("*")){total = (double) num1*num2;}
+else if(c.equals("/")){total = (double) num1/num2;}
+ */
 
+switch (c) {
+case "+":
+	total = (double) num1 + num2;
+	break;
+case "-":
+	total = (double) num1 - num2;
+	break;
+case "*":
+	total = (double) num1 * num2;
+	break;
+case "/":
+	total = (double) num1 / num2;
+	break;
+
+}
 %>
-<div class="container">
-<h1>
-<%= 
-request.getParameter("type").equals("time") ? sdf.format(date):sdf2.format(date) %>
-</h1>
-</div>
 
+
+<div class="container">
+<h1>계산결과</h1>
+<div class="display-4"><%=num1 %> <%=c %> <%=num2 %> =<span class="text-info"><%=total %></span>   </div>
+</div>
 
 </body>
 </html>

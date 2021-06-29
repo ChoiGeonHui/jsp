@@ -1,12 +1,10 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Quiz02</title>
+<title>Insert title here</title>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -24,25 +22,51 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
-
-
 </head>
 <body>
 
+
+<%!
+
+double bmiresult(int cm,int kg){
+	double total = (double)kg/(  ((double)cm/100)*((double)cm/100) );
+	
+	return total;
+}
+%>
+
 <%
-Date date = new Date();
-SimpleDateFormat sdf = new SimpleDateFormat("현재 시간은 HH시 mm분 ss초입니다");
-SimpleDateFormat sdf2 = new SimpleDateFormat("현재 날짜는 yyyy년 MM월 dd일 입니다");
 
-String a =request.getParameter("type") ;
+String cm = request.getParameter("CM");
+String kg = request.getParameter("KG");
 
+int CM = Integer.parseInt(cm);
+int KG = Integer.parseInt(kg);
+
+double total = bmiresult(CM, KG);
+
+String result;
+
+if(total>=31){
+	result="비만";
+}else if(total>=26){
+	result="과체중";
+}else if(total>=21){
+	result="정상";
+}else{
+	result="저체중";
+}
 
 %>
+
+
+
 <div class="container">
-<h1>
-<%= 
-request.getParameter("type").equals("time") ? sdf.format(date):sdf2.format(date) %>
-</h1>
+<h3>BMI 측정 결과</h3>
+<div class="d-flex">
+<div class="display-4">당신은<span class="text-info"><%=result%></span> 입니다</div>
+</div>
+<b>BMI 수치 :<%=total%> </b>
 </div>
 
 
