@@ -87,12 +87,9 @@
 		}
 	};
 	list.add(map);
-	
-	
+
 	String menu = request.getParameter("menu");
 	String four = request.getParameter("four");
-	
-	
 	%>
 
 	<table class="table text=center">
@@ -109,7 +106,7 @@
 			
 			for(int i=0;i<list.size();i++){
 				Map<String,Object> key = list.get(i);
-				if((double)key.get("point")>chk&&key.get("menu").equals("치킨")){
+				if((double)key.get("point")>chk&&key.get("menu").equals(menu)){
 					
 				%>
 				<tr>

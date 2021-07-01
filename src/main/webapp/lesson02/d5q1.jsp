@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>배달의 민족</title>
+<title>D-day</title>
+
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -22,20 +23,13 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	crossorigin="anonymous"></script>
-
 </head>
 <body>
+<div class="container">
 
-<form method="post" action="/lesson02/d3q3_1.jsp">
-	<div class="container">
-		<h1 class="text-center">메뉴 검색</h1>
-		<div class="d-flex align-items-center justify-content-center">
-			<input type="text" name="menu" class="form-control col-4 mr-3" placeholder="menu">
-			<label ><input type="checkbox" name="four" class="mr-2" value="f">4점 이하 제외</label>
-		</div>
-		<button class="btn btn-success ml-5">검색</button>
 
-	</div>
-</form>
+</div>
+
+
 </body>
 </html>
