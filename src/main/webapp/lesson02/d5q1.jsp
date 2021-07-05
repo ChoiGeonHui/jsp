@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,9 +28,23 @@
 </head>
 <body>
 <div class="container">
+<h1>오늘부터 1일</h1>
+
+		<%
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
+
+		for (int i = 1; i <= 10; i++) {
+			Calendar today = Calendar.getInstance();
+			today.add(Calendar.DATE, +(i*100));
+		%>
+		<span class="display-4"><%=i%>00일 : </span>
+		<span class="display-4 text-danger"><%out.print(sdf.format(today.getTime())); %> </span><br>
+		<%
+		}
+		%>
 
 
-</div>
+	</div>
 
 
 </body>
