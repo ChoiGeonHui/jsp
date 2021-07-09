@@ -1,0 +1,9 @@
+@charset "UTF-8";
+header{background: #ff8040; height: 50px}
+#head{color: white; align-items: center;}
+#navs{background: #ff8040;}
+a{color: white;}
+#list{border: 1px solid;}
+
+
+.inputText{height: 100px}
